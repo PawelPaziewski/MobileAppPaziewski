@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">MobileApp</string>
+    <string name="app_name">Clicker</string>
+    <string name="game_results">Game results</string>
+    <string name="play">Play game</string>
 </resources>
