@@ -6,11 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".Results">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Results screen"
-        tools:layout_editor_absoluteX="170dp"
-        tools:layout_editor_absoluteY="297dp" />
+    <TableLayout
+        android:id="@+id/tableOfResults"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:stretchColumns="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/topListLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/top_results"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tableOfResults" />
+
+    </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
