@@ -19,10 +19,9 @@ const val CORRECT_ANSWER_POINT = 1
 const val NO_ANSWER_POINT = -5
 
 const val ONE_SECOND_MILLIS = 1000L
-const val GAME_TIME_MILLIS = 60 * ONE_SECOND_MILLIS
-const val TIME_TO_ANSWER_SILVER_MILLIS = (ONE_SECOND_MILLIS * 1.5).toLong()
+const val GAME_TIME_MILLIS = 30 * ONE_SECOND_MILLIS
+const val TIME_TO_ANSWER = (ONE_SECOND_MILLIS * 1.5).toLong()
 
-const val POINTS_TEXT = "Gained points: %s"
-const val SECONDS_REMAINING = "Seconds to game end: %s"
+const val SCORE_EXTRA = "SCORE"
 
 data class Color(val name: String, val color: Int)
