@@ -1,5 +1,6 @@
 package pl.paziewski.mobileapp
 
+import android.content.Intent
 import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,7 +8,6 @@ import android.os.CountDownTimer
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.core.view.children
 
 class Game : AppCompatActivity() {
@@ -70,18 +70,19 @@ class Game : AppCompatActivity() {
         object : CountDownTimer(GAME_TIME_MILLIS, ONE_SECOND_MILLIS) {
             override fun onTick(millisUntilFinished: Long) {
                 timeRemainingLabel.text =
-                    String.format(SECONDS_REMAINING, millisUntilFinished / ONE_SECOND_MILLIS)
+                    String.format(
+                        getString(R.string.seconds_remaining),
+                        millisUntilFinished / ONE_SECOND_MILLIS
+                    )
             }
 
             override fun onFinish() {
                 timeRemainingLabel.text =
-                    String.format(SECONDS_REMAINING, 0)
+                    String.format(getString(R.string.seconds_remaining), 0)
                 answerTimer.cancel()
-                Toast.makeText(
-                    applicationContext,
-                    String.format(POINTS_TEXT, points),
-                    Toast.LENGTH_LONG
-                ).show()
+                val intent = Intent(applicationContext, GameEnd::class.java)
+                intent.putExtra(SCORE_EXTRA, points)
+                startActivity(intent)
             }
 
         }.start()
@@ -89,7 +90,7 @@ class Game : AppCompatActivity() {
 
     private fun startAnswerTimer() {
         answerTimer =
-            object : CountDownTimer(TIME_TO_ANSWER_SILVER_MILLIS, TIME_TO_ANSWER_SILVER_MILLIS) {
+            object : CountDownTimer(TIME_TO_ANSWER, TIME_TO_ANSWER) {
                 override fun onTick(millisUntilFinished: Long) {
                     //do nothing
                 }
@@ -105,6 +106,6 @@ class Game : AppCompatActivity() {
 
     private fun changePoints(pointsAmount: Int) {
         points += pointsAmount
-        pointsLabel.text = String.format(POINTS_TEXT, points)
+        pointsLabel.text = String.format(getString(R.string.score), points)
     }
 }

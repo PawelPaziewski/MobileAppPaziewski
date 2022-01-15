@@ -2,4 +2,12 @@
     <string name="app_name">Clicker</string>
     <string name="game_results">Game results</string>
     <string name="play">Play game</string>
+    <string name="save_to_top_list">Save to top list</string>
+    <string name="end_game_label_text">To save your score to top list just enter your username and click SAVE TO TOP LIST</string>
+    <string name="nickname_placeholder">Nickname</string>
+    <string name="score">Gained points: %s</string>
+    <string name="seconds_remaining">Seconds to game end: %s</string>
+    <string name="empty_nickname_toast_text">Invalid nickname. You have to enter valid one</string>
+    <string name="successfully_saved">Result saved to top list</string>
+    <string name="score_game_end">"Score: "</string>
 </resources>
