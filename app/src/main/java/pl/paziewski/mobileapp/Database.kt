@@ -16,7 +16,7 @@ data class Result(
 @Dao
 interface ResultDao {
 
-    @Query("select * from result order by score")
+    @Query("select * from result order by score desc")
     fun getAllOrderedByScore(): List<Result>
 
     @Insert
