@@ -1,18 +1,25 @@
 package pl.paziewski.mobileapp
 
-import android.graphics.Color
+import android.content.Context
+import java.util.*
 
-val colorsToChoose = mutableListOf(
-    Color("green", Color.rgb(34, 139, 34)),
-    Color("red", Color.rgb(178, 34, 34)),
-    Color("black", Color.rgb(0, 0, 0)),
-    Color("gray", Color.rgb(105, 105, 105)),
-    Color("blue", Color.rgb(0, 191, 255)),
-    Color("brown", Color.rgb(139, 69, 19)),
-    Color("orange", Color.rgb(255, 160, 122)),
-    Color("pink", Color.rgb(255, 105, 180)),
-    Color("purple", Color.rgb(160, 32, 240)),
-)
+class Colors(context: Context) {
+
+
+    var colorsToChoose = LinkedList<Color>()
+    init {
+        colorsToChoose.add(Color(context.getString(R.string.greenColorName), context.getColor(R.color.green)))
+        colorsToChoose.add(Color(context.getString(R.string.redColorName), context.getColor(R.color.red)))
+        colorsToChoose.add(Color(context.getString(R.string.blackColorName), context.getColor(R.color.black)))
+        colorsToChoose.add(Color(context.getString(R.string.grayColorName), context.getColor(R.color.gray)))
+        colorsToChoose.add(Color(context.getString(R.string.blueColorName), context.getColor(R.color.blue)))
+        colorsToChoose.add(Color(context.getString(R.string.brownColorName), context.getColor(R.color.brown)))
+        colorsToChoose.add(Color(context.getString(R.string.orangeColorName),context.getColor(R.color.orange)))
+        colorsToChoose.add(Color(context.getString(R.string.pinkColorName), context.getColor(R.color.pink)))
+        colorsToChoose.add(Color(context.getString(R.string.purpleColorName), context.getColor(R.color.purple)))
+        colorsToChoose.add(Color(context.getString(R.string.yellowColorName), context.getColor(R.color.yellow)))
+    }
+}
 
 const val WRONG_ANSWER_POINT = -2
 const val CORRECT_ANSWER_POINT = 1

@@ -5,7 +5,8 @@ import android.widget.TextView
 
 class Randomizer(
     private val colorButtons: MutableList<Button>,
-    private val colorToPickLabel: TextView
+    private val colorToPickLabel: TextView,
+    private val colorsToChoose: MutableList<Color>
 ) {
 
     private fun getRandomColors(colors: List<Color>, size: Int) = colors.shuffled().subList(0, size)

@@ -11,4 +11,14 @@
     <string name="successfully_saved">Result saved to top list</string>
     <string name="score_game_end">"Score: "</string>
     <string name="top_results">Top results</string>
+    <string name="greenColorName">GREEN</string>
+    <string name="redColorName">RED</string>
+    <string name="blackColorName">BLACK</string>
+    <string name="grayColorName">GRAY</string>
+    <string name="blueColorName">BLUE</string>
+    <string name="brownColorName">BROWN</string>
+    <string name="orangeColorName">ORANGE</string>
+    <string name="pinkColorName">PINK</string>
+    <string name="purpleColorName">PURPLE</string>
+    <string name="yellowColorName">YELLOW</string>
 </resources>

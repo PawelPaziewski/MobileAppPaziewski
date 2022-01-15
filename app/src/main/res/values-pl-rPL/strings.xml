@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Klikacz</string>
+    <string name="game_results">Wyniki gry</string>
+    <string name="play">Graj</string>
+    <string name="save_to_top_list">Zapisz do rankingu</string>
+    <string name="end_game_label_text">Aby zapisać wynik w rankingu wpisz nazwę gracza i kliknij \"Zapisz do rankingu\"</string>
+    <string name="nickname_placeholder">Nazwa gracza</string>
+    <string name="score">Zdobyte punkty: %s</string>
+    <string name="seconds_remaining">Sekund do końca gry: %s</string>
+    <string name="empty_nickname_toast_text">Niepoprawna nazwa gracza, Wprowadź poprawną wartość</string>
+    <string name="successfully_saved">Wynik zapisany do rankingu</string>
+    <string name="score_game_end">Wynik:</string>
+    <string name="top_results">Ranking</string>
+    <string name="greenColorName">ZIELONY</string>
+    <string name="redColorName">CZERWONY</string>
+    <string name="blackColorName">CZARNY</string>
+    <string name="grayColorName">SZARY</string>
+    <string name="blueColorName">NIEBIESKI</string>
+    <string name="brownColorName">BRĄZOWY</string>
+    <string name="orangeColorName">POMARAŃCZOWY</string>
+    <string name="pinkColorName">RÓŻOWY</string>
+    <string name="purpleColorName">FIOLETOWY</string>
+    <string name="yellowColorName">ŻÓŁTY</string>
+</resources>

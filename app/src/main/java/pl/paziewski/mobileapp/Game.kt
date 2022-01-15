@@ -28,7 +28,8 @@ class Game : AppCompatActivity() {
         setContentView(R.layout.activity_game)
         loadButtons()
         loadLabels()
-        randomizer = Randomizer(colorButtons, colorToPickLabel)
+        randomizer =
+            Randomizer(colorButtons, colorToPickLabel, Colors(applicationContext).colorsToChoose)
         randomizer.drawColors()
         startGameTimer()
         startAnswerTimer()
@@ -81,6 +82,7 @@ class Game : AppCompatActivity() {
                     String.format(getString(R.string.seconds_remaining), 0)
                 answerTimer.cancel()
                 val intent = Intent(applicationContext, GameEnd::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
                 intent.putExtra(SCORE_EXTRA, points)
                 startActivity(intent)
             }

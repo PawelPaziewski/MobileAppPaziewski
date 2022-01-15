@@ -10,8 +10,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         findViewById<Button>(R.id.playButton)
-            .setOnClickListener { startActivity(Intent(this, Game::class.java)) }
+            .setOnClickListener { val intent = Intent(this, Game::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
+                startActivity(intent) }
         findViewById<Button>(R.id.resultsButton)
-            .setOnClickListener { startActivity(Intent(this, Results::class.java)) }
+            .setOnClickListener { val intent = Intent(this, Results::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
+                startActivity(intent) }
+    }
+
+    override fun onBackPressed() {
+
     }
 }

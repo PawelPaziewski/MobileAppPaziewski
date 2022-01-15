@@ -44,7 +44,9 @@ class GameEnd : AppCompatActivity() {
                 getString(R.string.successfully_saved),
                 Toast.LENGTH_SHORT
             ).show()
-            startActivity(Intent(this, Results::class.java))
+            val intent = Intent(this, Results::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
+            startActivity(intent)
         } else {
             Toast.makeText(
                 applicationContext,
