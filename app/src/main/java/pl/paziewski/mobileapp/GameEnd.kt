@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.room.Room
 import kotlin.properties.Delegates
 
 class GameEnd : AppCompatActivity() {
@@ -16,9 +17,14 @@ class GameEnd : AppCompatActivity() {
 
     private var score by Delegates.notNull<Int>()
 
+    private lateinit var database: AppDb
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_end)
+
+        database = Room.databaseBuilder(applicationContext, AppDb::class.java, "result")
+            .allowMainThreadQueries().build()
 
         earnedPoints = findViewById(R.id.earnedPointLabel)
         nickname = findViewById(R.id.nicknameEditText)
@@ -51,6 +57,6 @@ class GameEnd : AppCompatActivity() {
     private fun validateNick(text: String) = text.isNotEmpty()
 
     private fun saveResultToDb(nickname: String, score: Int) {
-
+        database.resultDao().save(Result(nickname, score))
     }
 }
