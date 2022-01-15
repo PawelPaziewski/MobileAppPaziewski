@@ -18,8 +18,4 @@ class MainActivity : AppCompatActivity() {
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
                 startActivity(intent) }
     }
-
-    override fun onBackPressed() {
-
-    }
 }
