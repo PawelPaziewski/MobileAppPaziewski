@@ -21,6 +21,7 @@ class Game : AppCompatActivity() {
 
     private var points = 0
     private lateinit var answerTimer: CountDownTimer
+    private lateinit var gameTimer: CountDownTimer
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -68,7 +69,7 @@ class Game : AppCompatActivity() {
     }
 
     private fun startGameTimer() {
-        object : CountDownTimer(GAME_TIME_MILLIS, ONE_SECOND_MILLIS) {
+        this.gameTimer = object : CountDownTimer(GAME_TIME_MILLIS, ONE_SECOND_MILLIS) {
             override fun onTick(millisUntilFinished: Long) {
                 timeRemainingLabel.text =
                     String.format(
@@ -90,20 +91,25 @@ class Game : AppCompatActivity() {
         }.start()
     }
 
+    override fun onBackPressed() {
+        answerTimer.cancel()
+        gameTimer.cancel()
+        super.onBackPressed()
+    }
+
     private fun startAnswerTimer() {
-        answerTimer =
-            object : CountDownTimer(TIME_TO_ANSWER, TIME_TO_ANSWER) {
-                override fun onTick(millisUntilFinished: Long) {
-                    //do nothing
-                }
+        this.answerTimer = object : CountDownTimer(TIME_TO_ANSWER, TIME_TO_ANSWER) {
+            override fun onTick(millisUntilFinished: Long) {
+                //do nothing
+            }
 
-                override fun onFinish() {
-                    changePoints(NO_ANSWER_POINT)
-                    randomizer.drawColors()
-                    this.start()
-                }
+            override fun onFinish() {
+                changePoints(NO_ANSWER_POINT)
+                randomizer.drawColors()
+                this.start()
+            }
 
-            }.start()
+        }.start()
     }
 
     private fun changePoints(pointsAmount: Int) {
